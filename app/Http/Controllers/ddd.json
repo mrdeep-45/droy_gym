@@ -1,0 +1,29 @@
+{
+    "CODE": 200,
+    "RESPONSE": {
+        "CALL_DURATION": "0",
+        "QUERY_MCAT_NAME": "Metal Printing Services",
+        "QUERY_MESSAGE": "Requirement for Aluminium Sheet Printing Services\n Other Details: Service Location- Delhi , Rohtak Probable Requirement Type: Business Use",
+        "QUERY_PRODUCT_NAME": "Aluminium Sheet Printing Services",
+        "QUERY_TIME": "2025-08-29 23:12:53",
+        "QUERY_TYPE": "B",
+        "RECEIVER_CATALOG": "https://www.ashokproducts.in/",
+        "RECEIVER_MOBILE": null,
+        "SENDER_ADDRESS": "Delhi, Delhi",
+        "SENDER_CITY": "Delhi",
+        "SENDER_COMPANY": null,
+        "SENDER_COUNTRY_ISO": "IN",
+        "SENDER_EMAIL": "balram080688@gmail.com",
+        "SENDER_EMAIL_ALT": null,
+        "SENDER_MOBILE": "+91-9560037799",
+        "SENDER_MOBILE_ALT": "+91-8010378862",
+        "SENDER_NAME": "BALRAM",
+        "SENDER_PHONE": "+(91)-(11)-41538971",
+        "SENDER_PHONE_ALT": null,
+        "SENDER_PINCODE": null,
+        "SENDER_STATE": "Delhi",
+        "SUBJECT": "Requirement for Aluminium Sheet Printing Services",
+        "UNIQUE_QUERY_ID": "1093666416"
+    },
+    "STATUS": "SUCCESS"
+}
