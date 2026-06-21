@@ -441,6 +441,13 @@ Route::get('trainer/list', [TrainerController::class, 'getList'])->name('trainer
 Route::get('trainer/edit/{id}', [TrainerController::class, 'edit'])->name('trainer.edit');
 Route::post('trainer/delete', [TrainerController::class, 'destroy']) ->name('trainer.destroy');
 
+//member
+Route::get('member', [MemberController::class, 'index'])->name('memberview');
+Route::post('member/save', [MemberController::class, 'storeOrUpdate'])->name('member.store');
+Route::get('member/list', [MemberController::class, 'getList'])->name('member.list');
+Route::get('member/edit/{id}', [MemberController::class, 'edit'])->name('member.edit');
+Route::post('member/delete', [MemberController::class, 'destroy'])->name('member.destroy');
+
     //gst
     Route::get('gst', [Gst::class, 'index'])->name('gstview');
     Route::post('gst/save', [Gst::class, 'storeOrUpdate'])->name('gst.store');
