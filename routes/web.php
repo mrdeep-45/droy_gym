@@ -5,6 +5,9 @@ use App\Http\Controllers\Company;
 use App\Http\Controllers\Company_menu_sub_menu;
 use App\Http\Controllers\Company_setting;
 use App\Http\Controllers\CRM_dashboard;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\Currency;
 use App\Http\Controllers\Customer;
 use App\Http\Controllers\Documents;
@@ -447,6 +450,23 @@ Route::post('member/save', [MemberController::class, 'storeOrUpdate'])->name('me
 Route::get('member/list', [MemberController::class, 'getList'])->name('member.list');
 Route::get('member/edit/{id}', [MemberController::class, 'edit'])->name('member.edit');
 Route::post('member/delete', [MemberController::class, 'destroy'])->name('member.destroy');
+
+//subscription
+Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscriptionview');
+Route::post('subscription/save', [SubscriptionController::class, 'storeOrUpdate'])->name('subscription.store');
+Route::get('subscription/list', [SubscriptionController::class, 'getList'])->name('subscription.list');
+Route::get('subscription/edit/{id}', [SubscriptionController::class, 'edit'])->name('subscription.edit');
+Route::post('subscription/delete', [SubscriptionController::class, 'destroy'])->name('subscription.destroy');
+Route::get('subscription/plan-details/{id}', [SubscriptionController::class, 'planDetails'])->name('subscription.plandetails');
+
+//payment 
+Route::get('payment', [PaymentController::class, 'index'])->name('paymentview');
+Route::post('payment/save', [PaymentController::class, 'storeOrUpdate'])->name('payment.store');
+Route::get('payment/list', [PaymentController::class, 'getList'])->name('payment.list');
+Route::get('payment/edit/{id}', [PaymentController::class, 'edit'])->name('payment.edit');
+Route::post('payment/delete', [PaymentController::class, 'destroy'])->name('payment.destroy');
+Route::get('payment/subscription-details/{id}', [PaymentController::class, 'subscriptionDetails'])->name('payment.subdetails');
+Route::get('payment/receipt/{id}', [PaymentController::class, 'downloadReceipt'])->name('payment.receipt');
 
     //gst
     Route::get('gst', [Gst::class, 'index'])->name('gstview');
