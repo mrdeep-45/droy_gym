@@ -8,6 +8,11 @@ use App\Http\Controllers\CRM_dashboard;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\DietPlanController;
+use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Currency;
 use App\Http\Controllers\Customer;
 use App\Http\Controllers\Documents;
@@ -467,6 +472,41 @@ Route::get('payment/edit/{id}', [PaymentController::class, 'edit'])->name('payme
 Route::post('payment/delete', [PaymentController::class, 'destroy'])->name('payment.destroy');
 Route::get('payment/subscription-details/{id}', [PaymentController::class, 'subscriptionDetails'])->name('payment.subdetails');
 Route::get('payment/receipt/{id}', [PaymentController::class, 'downloadReceipt'])->name('payment.receipt');
+
+//expense
+Route::get('expense', [ExpenseController::class, 'index'])->name('expenseview');
+Route::post('expense/save', [ExpenseController::class, 'storeOrUpdate'])->name('expense.store');
+Route::get('expense/list', [ExpenseController::class, 'getList'])->name('expense.list');
+Route::get('expense/edit/{id}', [ExpenseController::class, 'edit'])->name('expense.edit');
+Route::post('expense/delete', [ExpenseController::class, 'destroy'])->name('expense.destroy');
+
+//die & workoutplan
+Route::get('diet-plan', [DietPlanController::class, 'index'])->name('dietplanview');
+Route::post('diet-plan/save', [DietPlanController::class, 'storeOrUpdate'])->name('dietplan.store');
+Route::get('diet-plan/list', [DietPlanController::class, 'getList'])->name('dietplan.list');
+Route::get('diet-plan/edit/{id}', [DietPlanController::class, 'edit'])->name('dietplan.edit');
+Route::post('diet-plan/delete', [DietPlanController::class, 'destroy'])->name('dietplan.destroy');
+
+//enquiry 
+Route::get('enquiry', [EnquiryController::class, 'index'])->name('enquiryview');
+Route::post('enquiry/save', [EnquiryController::class, 'storeOrUpdate'])->name('enquiry.store');
+Route::get('enquiry/list', [EnquiryController::class, 'getList'])->name('enquiry.list');
+Route::get('enquiry/edit/{id}', [EnquiryController::class, 'edit'])->name('enquiry.edit');
+Route::post('enquiry/delete', [EnquiryController::class, 'destroy'])->name('enquiry.destroy');
+
+//user management
+Route::get('staff-user', [UserController::class, 'index'])->name('staffuserview');
+Route::post('staff-user/save', [UserController::class, 'storeOrUpdate'])->name('staffuser.store');
+Route::get('staff-user/list', [UserController::class, 'getList'])->name('staffuser.list');
+Route::get('staff-user/edit/{id}', [UserController::class, 'edit'])->name('staffuser.edit');
+Route::post('staff-user/delete', [UserController::class, 'destroy'])->name('staffuser.destroy');
+
+//attendance 
+Route::get('attendancenew', [AttendanceController::class, 'index'])->name('attendanceview');
+Route::post('attendancenew/checkin', [AttendanceController::class, 'checkIn'])->name('attendance.checkin');
+Route::post('attendancenew/checkout', [AttendanceController::class, 'checkOut'])->name('attendance.checkout');
+Route::get('attendancenew/list', [AttendanceController::class, 'getList'])->name('attendance.list');
+Route::post('attendancenew/delete', [AttendanceController::class, 'destroy'])->name('attendance.destroy');
 
     //gst
     Route::get('gst', [Gst::class, 'index'])->name('gstview');
